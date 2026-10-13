@@ -1,0 +1,14 @@
+node_modules
+.next
+out
+.DS_Store
+.env
+.env.local
+.env*.local
+.desk-pin
+*.xlsx
+*.log
+.vercel
+next-env.d.ts
+*.tsbuildinfo
+supabase/.temp
