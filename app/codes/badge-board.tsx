@@ -1,17 +1,10 @@
-import QRCode from "qrcode";
+import { badgeDataUrl, badgeFileName } from "@/lib/badge-files";
 import type { RosterBadge } from "@/lib/types";
+import { ZipButton } from "./zip-button";
 
 export async function BadgeBoard({ people }: { people: RosterBadge[] }) {
   const tiles = await Promise.all(
-    people.map(async (person) => {
-      const src = await QRCode.toDataURL(person.placard_code, {
-        margin: 1,
-        width: 280,
-        errorCorrectionLevel: "M",
-        color: { dark: "#1D1D1F", light: "#FFFFFF" },
-      });
-      return { person, src };
-    })
+    people.map(async (person) => ({ person, src: await badgeDataUrl(person.placard_code) }))
   );
 
   const groups: { committee: string; items: typeof tiles }[] = [];
@@ -28,20 +21,34 @@ export async function BadgeBoard({ people }: { people: RosterBadge[] }) {
     <div>
       {groups.map((group) => (
         <section className="committee-group" key={group.committee}>
-          <h2>{group.committee}</h2>
-          <p className="count">
-            {group.items.length} {group.items.length === 1 ? "allocation" : "allocations"}
-          </p>
+          <div className="group-head">
+            <div>
+              <h2>{group.committee}</h2>
+              <p className="count">
+                {group.items.length} {group.items.length === 1 ? "allocation" : "allocations"}
+              </p>
+            </div>
+            <ZipButton
+              variant="link"
+              label={`Download ${group.committee} as ZIP`}
+              zipLabel={group.committee}
+              badges={group.items.map(({ person }) => ({
+                placard_code: person.placard_code,
+                committee: person.committee,
+                allocation: person.allocation,
+              }))}
+            />
+          </div>
           <div className="tiles">
             {group.items.map(({ person, src }) => (
               <article className="tile" key={person.placard_code}>
-                <img src={src} alt="" />
+                <img src={src} alt={`QR code for ${person.placard_code}`} />
                 <p className="allocation">{person.allocation}</p>
                 <p className="who">{person.full_name ?? "Open seat"}</p>
                 <p className="seat">{person.role === "chair" ? "Chair" : "Delegate"}</p>
                 <p className="code">{person.placard_code}</p>
-                <a download={`${person.placard_code}.png`} href={src}>
-                  Download
+                <a download={badgeFileName(person)} href={src}>
+                  Download PNG
                 </a>
               </article>
             ))}

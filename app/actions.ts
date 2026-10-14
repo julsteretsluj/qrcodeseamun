@@ -3,8 +3,8 @@
 import { redirect } from "next/navigation";
 import { createServerSupabase } from "@/lib/supabase/server";
 
-export async function signOutOfCodes() {
+export async function signOut() {
   const supabase = await createServerSupabase();
   if (supabase) await supabase.auth.signOut();
-  redirect("/codes");
+  redirect("/login");
 }

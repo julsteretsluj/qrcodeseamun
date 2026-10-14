@@ -1,52 +1,36 @@
+import Link from "next/link";
+import { redirect } from "next/navigation";
 import { Wordmark } from "@/components/wordmark";
-import { QR_OWNER_EMAIL } from "@/lib/access";
-import { createServerSupabase } from "@/lib/supabase/server";
+import { getSession } from "@/lib/session";
 import type { RosterBadge } from "@/lib/types";
-import { signOutOfCodes } from "./actions";
+import { signOut } from "../actions";
 import { BadgeBoard } from "./badge-board";
 import { PrintCodes } from "./print-codes";
-import { SignIn } from "./sign-in";
+import { ZipButton } from "./zip-button";
 
 export const dynamic = "force-dynamic";
 
 export default async function CodesPage() {
-  const supabase = await createServerSupabase();
-  if (!supabase) {
+  const { supabase, user, isOwner } = await getSession();
+  if (!supabase || !user) redirect("/login");
+
+  if (!isOwner) {
     return (
       <main className="page">
+        <nav className="topbar">
+          <Link className="back-link" href="/">
+            Registration desk
+          </Link>
+        </nav>
         <Wordmark
           title="Badge codes"
-          lede="Badge codes are not configured yet."
+          lede={`${user.email} cannot open badge codes. They are only available to the SEAMUN secretariat account.`}
         />
-      </main>
-    );
-  }
-
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  if (!user || (user.email ?? "").toLowerCase() !== QR_OWNER_EMAIL) {
-    const denied = Boolean(user);
-    return (
-      <main className="page">
-        <Wordmark
-          title="Badge codes"
-          lede={
-            denied
-              ? "This account cannot open badge codes."
-              : "Sign in to print a code for every allocation."
-          }
-        />
-        {denied ? (
-          <form action={signOutOfCodes}>
-            <button className="button secondary" type="submit">
-              Sign out
-            </button>
-          </form>
-        ) : (
-          <SignIn />
-        )}
+        <form action={signOut}>
+          <button className="button secondary" type="submit">
+            Sign out and switch account
+          </button>
+        </form>
       </main>
     );
   }
@@ -56,19 +40,38 @@ export default async function CodesPage() {
 
   return (
     <main className="page">
-      <div className="board-head">
-        <Wordmark
-          title="Badge codes"
-          lede="One code for every allocation. Scanning a code checks that delegate or chair in."
-        />
-        <div className="head-actions">
-          <PrintCodes />
-          <form action={signOutOfCodes}>
+      <nav className="topbar">
+        <Link className="back-link" href="/">
+          Registration desk
+        </Link>
+        <div className="account">
+          <span>{user.email}</span>
+          <form action={signOut}>
             <button className="button quiet" type="submit">
               Sign out
             </button>
           </form>
         </div>
+      </nav>
+      <div className="board-head">
+        <Wordmark
+          title="Badge codes"
+          lede={`${people.length} codes, one for every delegate and chair allocation. Scanning a code at the desk checks that person in.`}
+        />
+        {people.length > 0 ? (
+          <div className="head-actions">
+            <ZipButton
+              label="Download all as ZIP"
+              zipLabel="All committees"
+              badges={people.map(({ placard_code, committee, allocation }) => ({
+                placard_code,
+                committee,
+                allocation,
+              }))}
+            />
+            <PrintCodes />
+          </div>
+        ) : null}
       </div>
       {error || people.length === 0 ? (
         <p className="note">Badge codes could not be loaded for this account.</p>

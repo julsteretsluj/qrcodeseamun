@@ -1,12 +1,19 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { Html5Qrcode } from "html5-qrcode";
+import {
+  cameraMessages,
+  cameraSupportProblem,
+  classifyCameraError,
+  requestRearCamera,
+} from "@/lib/camera";
 import { createDeskClient } from "@/lib/supabase/desk";
 import { parseBadgeCode } from "@/lib/parse-code";
 import type { BadgeLookup, DeskCounts } from "@/lib/types";
 
 const PIN_KEY = "seamun-desk-pin";
+const REPEAT_WINDOW_MS = 4000;
 
 const emptyCounts: DeskCounts = {
   delegates_registered: 0,
@@ -14,6 +21,8 @@ const emptyCounts: DeskCounts = {
   chairs_registered: 0,
   chairs_total: 0,
 };
+
+type Camera = { id: string; label: string };
 
 function messageFor(status: BadgeLookup["status"]) {
   if (status === "bad_pin") return "That desk code is not right.";
@@ -25,6 +34,15 @@ function messageFor(status: BadgeLookup["status"]) {
   return null;
 }
 
+async function createDecoder(elementId: string) {
+  const { Html5Qrcode, Html5QrcodeSupportedFormats } = await import("html5-qrcode");
+  return new Html5Qrcode(elementId, {
+    verbose: false,
+    formatsToSupport: [Html5QrcodeSupportedFormats.QR_CODE],
+    useBarCodeDetectorIfSupported: true,
+  });
+}
+
 export function RegistrationDesk() {
   const [pin, setPin] = useState("");
   const [unlocked, setUnlocked] = useState(false);
@@ -34,17 +52,25 @@ export function RegistrationDesk() {
   const [notice, setNotice] = useState<string | null>(null);
   const [cameraError, setCameraError] = useState<string | null>(null);
   const [cameraOn, setCameraOn] = useState(false);
+  const [cameraStarting, setCameraStarting] = useState(false);
+  const [cameras, setCameras] = useState<Camera[]>([]);
+  const [cameraId, setCameraId] = useState<string | null>(null);
+  const [photoError, setPhotoError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const scannerRef = useRef<Html5Qrcode | null>(null);
   const busyRef = useRef(false);
+  const startToken = useRef(0);
   const pinRef = useRef("");
+  const lastRead = useRef<{ code: string; at: number } | null>(null);
   const resumeCamera = useRef(false);
+  const photoInput = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
     const saved = sessionStorage.getItem(PIN_KEY);
     if (!saved) return;
     pinRef.current = saved;
     void openDesk(saved, true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function openDesk(nextPin: string, fromSession = false) {
@@ -83,46 +109,102 @@ export function RegistrationDesk() {
     return true;
   }
 
-  async function stopCamera() {
+  const stopCamera = useCallback(async () => {
+    startToken.current += 1;
     const scanner = scannerRef.current;
     scannerRef.current = null;
-    if (scanner?.isScanning) {
+    if (scanner) {
       try {
         await scanner.stop();
       } catch {
-        // The camera may already be stopped.
+        // The scanner was not running yet or has already stopped.
       }
     }
+    document.querySelectorAll<HTMLVideoElement>("#viewfinder video").forEach((video) => {
+      const stream = video.srcObject as MediaStream | null;
+      stream?.getTracks().forEach((track) => track.stop());
+      video.srcObject = null;
+    });
     try {
       scanner?.clear();
     } catch {
       // The viewfinder node may already be gone.
     }
     setCameraOn(false);
-  }
+  }, []);
 
-  async function startCamera() {
+  async function startCamera(preferredId?: string) {
     setCameraError(null);
-    if (!document.getElementById("viewfinder")) return;
-    const { Html5Qrcode } = await import("html5-qrcode");
-    if (!scannerRef.current) {
-      scannerRef.current = new Html5Qrcode("viewfinder", { verbose: false });
+    const problem = cameraSupportProblem();
+    if (problem) {
+      setCameraError(cameraMessages[problem]);
+      return;
     }
-    if (scannerRef.current.isScanning) return;
+    if (!document.getElementById("viewfinder")) return;
+    setCameraStarting(true);
+    await stopCamera();
+    const token = startToken.current;
+
+    let targetId = preferredId ?? cameraId;
     try {
-      await scannerRef.current.start(
-        { facingMode: "environment" },
-        { fps: 8, qrbox: { width: 230, height: 230 } },
+      if (cameras.length === 0) {
+        const found = await requestRearCamera();
+        if (found.cameras.length === 0) {
+          setCameraError(cameraMessages.missing);
+          setCameraStarting(false);
+          return;
+        }
+        setCameras(found.cameras);
+        targetId = targetId ?? found.activeId;
+      }
+
+      const scanner = await createDecoder("viewfinder");
+      scannerRef.current = scanner;
+      await scanner.start(
+        targetId ? { deviceId: { exact: targetId } } : { facingMode: "environment" },
+        {
+          fps: 10,
+          qrbox: (width, height) => {
+            const side = Math.max(160, Math.floor(Math.min(width, height) * 0.7));
+            return { width: side, height: side };
+          },
+        },
         (text) => {
-          void lookup(text);
+          void handleRead(text);
         },
         () => {}
       );
+      if (token !== startToken.current) {
+        scannerRef.current = scanner;
+        await stopCamera();
+        return;
+      }
+      setCameraId(targetId ?? null);
       setCameraOn(true);
-    } catch {
+    } catch (error) {
+      scannerRef.current = null;
       setCameraOn(false);
-      setCameraError("The camera is unavailable. Type the badge code instead.");
+      setCameraError(cameraMessages[classifyCameraError(error)]);
+    } finally {
+      setCameraStarting(false);
     }
+  }
+
+  function switchCamera() {
+    if (cameras.length < 2) return;
+    const index = cameras.findIndex((camera) => camera.id === cameraId);
+    const next = cameras[(index + 1) % cameras.length];
+    void startCamera(next.id);
+  }
+
+  async function handleRead(raw: string) {
+    const parsed = parseBadgeCode(raw);
+    if (!parsed) return;
+    const now = Date.now();
+    const previous = lastRead.current;
+    if (previous && previous.code === parsed && now - previous.at < REPEAT_WINDOW_MS) return;
+    lastRead.current = { code: parsed, at: now };
+    await lookup(parsed);
   }
 
   async function lookup(raw: string) {
@@ -131,6 +213,7 @@ export function RegistrationDesk() {
     busyRef.current = true;
     setBusy(true);
     setNotice(null);
+    setPhotoError(null);
     await stopCamera();
 
     const supabase = createDeskClient();
@@ -171,17 +254,51 @@ export function RegistrationDesk() {
     setBusy(false);
   }
 
+  async function scanPhoto(file: File | undefined) {
+    if (!file) return;
+    setPhotoError(null);
+    setNotice(null);
+    await stopCamera();
+    let decoder: Html5Qrcode | null = null;
+    try {
+      decoder = await createDecoder("photo-decoder");
+      const text = await decoder.scanFile(file, false);
+      lastRead.current = null;
+      await handleRead(text);
+    } catch {
+      setPhotoError(
+        "No QR code was found in that photo. Fill the frame with the code and try again."
+      );
+    } finally {
+      try {
+        decoder?.clear();
+      } catch {
+        // Nothing was rendered.
+      }
+      if (photoInput.current) photoInput.current.value = "";
+    }
+  }
+
   useEffect(() => {
     if (!unlocked || result || !resumeCamera.current) return;
     resumeCamera.current = false;
     void startCamera();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [unlocked, result]);
 
   useEffect(() => {
+    const onHidden = () => {
+      if (document.visibilityState === "hidden") void stopCamera();
+    };
+    const onPageHide = () => void stopCamera();
+    document.addEventListener("visibilitychange", onHidden);
+    window.addEventListener("pagehide", onPageHide);
     return () => {
+      document.removeEventListener("visibilitychange", onHidden);
+      window.removeEventListener("pagehide", onPageHide);
       void stopCamera();
     };
-  }, []);
+  }, [stopCamera]);
 
   if (!unlocked) {
     return (
@@ -206,7 +323,11 @@ export function RegistrationDesk() {
             Open the scanner
           </button>
         </div>
-        {notice ? <p className="error">{notice}</p> : null}
+        {notice ? (
+          <p className="error" role="alert">
+            {notice}
+          </p>
+        ) : null}
       </form>
     );
   }
@@ -244,7 +365,8 @@ export function RegistrationDesk() {
                   className="button"
                   type="button"
                   onClick={() => {
-                    resumeCamera.current = true;
+                    resumeCamera.current = cameras.length > 0;
+                    lastRead.current = null;
                     setResult(null);
                     setNotice(null);
                   }}
@@ -255,17 +377,59 @@ export function RegistrationDesk() {
             </article>
           ) : (
             <>
-              <div id="viewfinder" className="viewfinder" />
-              {cameraError ? <p className="note">{cameraError}</p> : null}
-              {!cameraOn ? (
-                <div className="actions">
-                  <button className="button secondary" type="button" onClick={() => void startCamera()}>
+              <div className="viewfinder-frame">
+                <div id="viewfinder" className="viewfinder" />
+                {!cameraOn ? (
+                  <p className="viewfinder-hint">
+                    {cameraStarting ? "Starting the camera…" : "Point the rear camera at a badge code."}
+                  </p>
+                ) : null}
+              </div>
+              {cameraError ? (
+                <p className="error" role="alert">
+                  {cameraError}
+                </p>
+              ) : null}
+              <div className="actions">
+                {!cameraOn ? (
+                  <button
+                    className="button"
+                    type="button"
+                    disabled={cameraStarting || busy}
+                    onClick={() => void startCamera()}
+                  >
                     Use the camera
                   </button>
-                </div>
+                ) : (
+                  <button className="button secondary" type="button" onClick={() => void stopCamera()}>
+                    Stop the camera
+                  </button>
+                )}
+                {cameraOn && cameras.length > 1 ? (
+                  <button className="button secondary" type="button" onClick={switchCamera}>
+                    Switch camera
+                  </button>
+                ) : null}
+                <label className="button secondary file-button">
+                  Scan from a photo
+                  <input
+                    ref={photoInput}
+                    type="file"
+                    accept="image/*"
+                    capture="environment"
+                    disabled={busy}
+                    onChange={(event) => void scanPhoto(event.target.files?.[0])}
+                  />
+                </label>
+              </div>
+              {photoError ? (
+                <p className="error" role="alert">
+                  {photoError}
+                </p>
               ) : null}
             </>
           )}
+          <div id="photo-decoder" className="photo-decoder" aria-hidden="true" />
         </section>
         <form
           className="panel manual"
@@ -289,8 +453,12 @@ export function RegistrationDesk() {
               Check this badge in
             </button>
           </div>
-          <p className="note">Type the code if the badge will not scan.</p>
-          {notice ? <p className="error">{notice}</p> : null}
+          <p className="note">Type the code or the six-character ID if the badge will not scan.</p>
+          {notice ? (
+            <p className="error" role="alert">
+              {notice}
+            </p>
+          ) : null}
         </form>
       </div>
     </div>

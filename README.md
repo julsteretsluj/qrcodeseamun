@@ -16,19 +16,22 @@ npm run dev
 ```
 
 - Registration desk: [http://localhost:3000](http://localhost:3000)
+- Sign in: [http://localhost:3000/login](http://localhost:3000/login)
 - Badge codes: [http://localhost:3000/codes](http://localhost:3000/codes)
 
 ## The desk
 
 The desk asks for a desk code before it opens. Only a bcrypt hash of that code is stored, in `registration_desk`. Every lookup sends the desk code again, and ten wrong codes in fifteen minutes pause the desk. A lookup returns one person at a time: name, committee, allocation, and role. Email, grade, and school are never returned.
 
-Camera scanning uses the device's rear camera. If a badge will not scan, type its placard code (for example `SEAMUN-2027-ECO-001`) or its six-character short id from the matrix.
+The camera needs HTTPS (or `localhost`). It asks for the rear camera, offers Switch camera when the device has more than one, ignores the same code read twice within four seconds, and turns off when the tab is hidden or closed. If the live camera is not an option, Scan from a photo decodes a picture of the badge with the same decoder. A badge can also be typed in by its placard code (for example `SEAMUN-2027-ECO-001`) or its six-character short id from the matrix.
 
-## Badge codes
+## Signing in and badge codes
 
-`/codes` only opens for `juleskittoastrop@gmail.com`. Sign in with that account's SEAMUN password, or ask for a sign-in email. The page checks the email on the server, and the `list_registration_badges` function checks it again in the database, so another account gets nothing back. Each tile can be downloaded as a PNG, and the whole page prints as a sheet of codes.
+Badge codes only open for `juleskittoastrop@gmail.com`. Use Secretariat sign in on the desk, or go to `/login`, and sign in with that account's SEAMUN password. There is also a sign-in link by email, and Forgot password? sends a reset email that opens `/reset-password` to choose a new one. The page checks the email on the server, and the `list_registration_badges` function checks it again in the database, so any other account is turned away and gets nothing back.
 
-For the sign-in email link to come back to this app, add `<site>/auth/callback` to the Supabase Auth redirect allow list.
+`/codes` shows every code grouped by committee. Download all as ZIP saves one PNG per allocation, named `COMMITTEE_Allocation_PLACARD.png`. Each committee also has its own ZIP, each tile has its own PNG, and the page prints as a sheet of codes. The images are made in the browser after the signed-in roster loads; none are stored in the app.
+
+In Supabase Auth, URL Configuration, add `<site>/auth/**` to the redirect allow list so sign-in links (`/auth/callback`) and password resets (`/auth/reset`) return to this app.
 
 ## What a QR code contains
 
