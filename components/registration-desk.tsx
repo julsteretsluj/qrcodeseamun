@@ -12,7 +12,6 @@ import { createDeskClient } from "@/lib/supabase/desk";
 import { parseBadgeCode } from "@/lib/parse-code";
 import type { BadgeLookup, DeskCounts } from "@/lib/types";
 
-const PIN_KEY = "seamun-desk-pin";
 const REPEAT_WINDOW_MS = 4000;
 
 const emptyCounts: DeskCounts = {
@@ -25,10 +24,6 @@ const emptyCounts: DeskCounts = {
 type Camera = { id: string; label: string };
 
 function messageFor(status: BadgeLookup["status"]) {
-  if (status === "bad_pin") return "That desk code is not right.";
-  if (status === "locked") {
-    return "The desk is paused after too many wrong codes. Try again in a few minutes.";
-  }
   if (status === "not_found") return "No delegate or chair allocation uses that ID.";
   if (status === "error") return "The roster could not be reached. Try the code again.";
   return null;
@@ -44,8 +39,6 @@ async function createDecoder(elementId: string) {
 }
 
 export function RegistrationDesk() {
-  const [pin, setPin] = useState("");
-  const [unlocked, setUnlocked] = useState(false);
   const [counts, setCounts] = useState<DeskCounts>(emptyCounts);
   const [code, setCode] = useState("");
   const [result, setResult] = useState<BadgeLookup | null>(null);
@@ -60,54 +53,27 @@ export function RegistrationDesk() {
   const scannerRef = useRef<Html5Qrcode | null>(null);
   const busyRef = useRef(false);
   const startToken = useRef(0);
-  const pinRef = useRef("");
   const lastRead = useRef<{ code: string; at: number } | null>(null);
   const resumeCamera = useRef(false);
   const photoInput = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
-    const saved = sessionStorage.getItem(PIN_KEY);
-    if (!saved) return;
-    pinRef.current = saved;
-    void openDesk(saved, true);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  async function openDesk(nextPin: string, fromSession = false) {
     const supabase = createDeskClient();
     if (!supabase) {
       setNotice("The scanner is not connected to the roster yet.");
-      return false;
+      return;
     }
-    setBusy(true);
-    setNotice(null);
-    const { data, error } = await supabase.rpc("open_registration_desk", {
-      p_pin: nextPin,
+    void supabase.rpc("registration_desk_counts").then(({ data, error }) => {
+      if (error || !data) return;
+      const payload = data as Partial<DeskCounts>;
+      setCounts({
+        delegates_registered: payload.delegates_registered ?? 0,
+        delegates_total: payload.delegates_total ?? 0,
+        chairs_registered: payload.chairs_registered ?? 0,
+        chairs_total: payload.chairs_total ?? 0,
+      });
     });
-    setBusy(false);
-    const payload = data as Partial<BadgeLookup> | null;
-    if (error || !payload?.ok) {
-      if (!fromSession) {
-        setNotice(
-          messageFor(error ? "error" : payload?.status === "locked" ? "locked" : "bad_pin")
-        );
-      }
-      sessionStorage.removeItem(PIN_KEY);
-      setUnlocked(false);
-      return false;
-    }
-    pinRef.current = nextPin;
-    sessionStorage.setItem(PIN_KEY, nextPin);
-    setCounts({
-      delegates_registered: payload.delegates_registered ?? 0,
-      delegates_total: payload.delegates_total ?? 0,
-      chairs_registered: payload.chairs_registered ?? 0,
-      chairs_total: payload.chairs_total ?? 0,
-    });
-    setUnlocked(true);
-    setNotice(null);
-    return true;
-  }
+  }, []);
 
   const stopCamera = useCallback(async () => {
     startToken.current += 1;
@@ -225,18 +191,12 @@ export function RegistrationDesk() {
     }
 
     const { data, error } = await supabase.rpc("register_badge", {
-      p_pin: pinRef.current,
       p_code: parsed,
     });
     const payload = data as BadgeLookup | null;
     if (error || !payload) {
       setNotice(messageFor("error"));
       setResult(null);
-    } else if (payload.status === "bad_pin" || payload.status === "locked") {
-      sessionStorage.removeItem(PIN_KEY);
-      setUnlocked(false);
-      setResult(null);
-      setNotice(messageFor(payload.status));
     } else if (payload.status === "not_found") {
       setResult(null);
       setNotice(messageFor("not_found"));
@@ -280,11 +240,11 @@ export function RegistrationDesk() {
   }
 
   useEffect(() => {
-    if (!unlocked || result || !resumeCamera.current) return;
+    if (result || !resumeCamera.current) return;
     resumeCamera.current = false;
     void startCamera();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [unlocked, result]);
+  }, [result]);
 
   useEffect(() => {
     const onHidden = () => {
@@ -299,38 +259,6 @@ export function RegistrationDesk() {
       void stopCamera();
     };
   }, [stopCamera]);
-
-  if (!unlocked) {
-    return (
-      <form
-        className="panel desk-gate"
-        onSubmit={(event) => {
-          event.preventDefault();
-          void openDesk(pin.trim());
-        }}
-      >
-        <label htmlFor="desk-pin">Desk code</label>
-        <input
-          id="desk-pin"
-          value={pin}
-          onChange={(event) => setPin(event.target.value)}
-          autoComplete="off"
-          inputMode="numeric"
-          autoFocus
-        />
-        <div className="actions">
-          <button className="button" type="submit" disabled={busy || pin.trim().length === 0}>
-            Open the scanner
-          </button>
-        </div>
-        {notice ? (
-          <p className="error" role="alert">
-            {notice}
-          </p>
-        ) : null}
-      </form>
-    );
-  }
 
   const statusLine = result ? describeResult(result) : null;
 
@@ -454,7 +382,10 @@ export function RegistrationDesk() {
               Check this badge in
             </button>
           </div>
-          <p className="note">Type the six-character ID printed under the code. Older placard codes like SEAMUN-2027-ECO-001 still work.</p>
+          <p className="note">
+            Type the six-character ID printed under the code. Older placard codes like
+            SEAMUN-2027-ECO-001 still work.
+          </p>
           {notice ? (
             <p className="error" role="alert">
               {notice}

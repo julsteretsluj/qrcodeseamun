@@ -4,8 +4,6 @@ export type BadgeStatus =
   | "already_registered"
   | "unassigned"
   | "not_found"
-  | "bad_pin"
-  | "locked"
   | "error";
 
 export type DeskCounts = {

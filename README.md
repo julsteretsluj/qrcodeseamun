@@ -21,7 +21,7 @@ npm run dev
 
 ## The desk
 
-The desk asks for a desk code before it opens. Only a bcrypt hash of that code is stored, in `registration_desk`. Every lookup sends the desk code again, and ten wrong codes in fifteen minutes pause the desk. A lookup returns one person at a time: name, committee, allocation, and role. Email, grade, and school are never returned.
+Anyone who opens the site can use the scanner. A lookup returns one person at a time: name, committee, allocation, and role. Email, grade, and school are never returned, and the full roster is not exposed.
 
 The camera needs HTTPS (or `localhost`). It asks for the rear camera, offers Switch camera when the device has more than one, ignores the same code read twice within four seconds, and turns off when the tab is hidden or closed. If the live camera is not an option, Scan from a photo decodes a picture of the badge with the same decoder. A badge can also be typed in by its six-character allocation ID (for example `k2l4wj`, any letter case). Older placard codes such as `SEAMUN-2027-ECO-001` are still accepted.
 
