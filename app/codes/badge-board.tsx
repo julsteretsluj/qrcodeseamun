@@ -4,7 +4,7 @@ import { ZipButton } from "./zip-button";
 
 export async function BadgeBoard({ people }: { people: RosterBadge[] }) {
   const tiles = await Promise.all(
-    people.map(async (person) => ({ person, src: await badgeDataUrl(person.placard_code) }))
+    people.map(async (person) => ({ person, src: await badgeDataUrl(person.short_id) }))
   );
 
   const groups: { committee: string; items: typeof tiles }[] = [];
@@ -33,7 +33,7 @@ export async function BadgeBoard({ people }: { people: RosterBadge[] }) {
               label={`Download ${group.committee} as ZIP`}
               zipLabel={group.committee}
               badges={group.items.map(({ person }) => ({
-                placard_code: person.placard_code,
+                short_id: person.short_id,
                 committee: person.committee,
                 allocation: person.allocation,
               }))}
@@ -42,7 +42,8 @@ export async function BadgeBoard({ people }: { people: RosterBadge[] }) {
           <div className="tiles">
             {group.items.map(({ person, src }) => (
               <article className="tile" key={person.placard_code}>
-                <img src={src} alt={`QR code for ${person.placard_code}`} />
+                <img src={src} alt={`QR code for allocation ID ${person.short_id}`} />
+                <p className="badge-id">{person.short_id}</p>
                 <p className="allocation">{person.allocation}</p>
                 <p className="who">{person.full_name ?? "Open seat"}</p>
                 <p className="seat">{person.role === "chair" ? "Chair" : "Delegate"}</p>

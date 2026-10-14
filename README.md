@@ -23,19 +23,19 @@ npm run dev
 
 The desk asks for a desk code before it opens. Only a bcrypt hash of that code is stored, in `registration_desk`. Every lookup sends the desk code again, and ten wrong codes in fifteen minutes pause the desk. A lookup returns one person at a time: name, committee, allocation, and role. Email, grade, and school are never returned.
 
-The camera needs HTTPS (or `localhost`). It asks for the rear camera, offers Switch camera when the device has more than one, ignores the same code read twice within four seconds, and turns off when the tab is hidden or closed. If the live camera is not an option, Scan from a photo decodes a picture of the badge with the same decoder. A badge can also be typed in by its placard code (for example `SEAMUN-2027-ECO-001`) or its six-character short id from the matrix.
+The camera needs HTTPS (or `localhost`). It asks for the rear camera, offers Switch camera when the device has more than one, ignores the same code read twice within four seconds, and turns off when the tab is hidden or closed. If the live camera is not an option, Scan from a photo decodes a picture of the badge with the same decoder. A badge can also be typed in by its six-character allocation ID (for example `k2l4wj`, any letter case). Older placard codes such as `SEAMUN-2027-ECO-001` are still accepted.
 
 ## Signing in and badge codes
 
 Badge codes only open for `juleskittoastrop@gmail.com`. Use Secretariat sign in on the desk, or go to `/login`, and sign in with that account's SEAMUN password. There is also a sign-in link by email, and Forgot password? sends a reset email that opens `/reset-password` to choose a new one. The page checks the email on the server, and the `list_registration_badges` function checks it again in the database, so any other account is turned away and gets nothing back.
 
-`/codes` shows every code grouped by committee. Download all as ZIP saves one PNG per allocation, named `COMMITTEE_Allocation_PLACARD.png`. Each committee also has its own ZIP, each tile has its own PNG, and the page prints as a sheet of codes. The images are made in the browser after the signed-in roster loads; none are stored in the app.
+`/codes` shows every code grouped by committee. Download all as ZIP saves one PNG per allocation, named `COMMITTEE_Allocation_id.png` (for example `UNHRC_France_k2l4wj.png`). Each committee also has its own ZIP, each tile has its own PNG, and the page prints as a sheet of codes. The images are made in the browser after the signed-in roster loads; none are stored in the app.
 
 In Supabase Auth, URL Configuration, add `<site>/auth/**` to the redirect allow list so sign-in links (`/auth/callback`) and password resets (`/auth/reset`) return to this app.
 
 ## What a QR code contains
 
-Each code encodes only the placard code from the allocation matrix, for example `SEAMUN-2027-ECO-001`. It carries no name or contact details.
+Each code encodes only the six-character allocation ID from the matrix `ID` column (stored as `registration_people.short_id`), for example `k2l4wj`. It carries no name or contact details. Codes printed before this change held placard codes; they still check in, but reprint them from `/codes` so every badge carries its ID.
 
 ## Where registration is stored
 

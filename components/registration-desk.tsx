@@ -29,7 +29,7 @@ function messageFor(status: BadgeLookup["status"]) {
   if (status === "locked") {
     return "The desk is paused after too many wrong codes. Try again in a few minutes.";
   }
-  if (status === "not_found") return "No delegate or chair allocation uses that code.";
+  if (status === "not_found") return "No delegate or chair allocation uses that ID.";
   if (status === "error") return "The roster could not be reached. Try the code again.";
   return null;
 }
@@ -438,22 +438,23 @@ export function RegistrationDesk() {
             void lookup(code);
           }}
         >
-          <label htmlFor="badge-code">Badge code</label>
+          <label htmlFor="badge-code">Allocation ID</label>
           <input
             id="badge-code"
             value={code}
             onChange={(event) => setCode(event.target.value)}
-            autoCapitalize="characters"
+            autoCapitalize="none"
+            autoComplete="off"
             autoCorrect="off"
             spellCheck={false}
-            placeholder="SEAMUN-2027-ECO-001"
+            placeholder="k2l4wj"
           />
           <div className="actions">
             <button className="button" type="submit" disabled={busy || code.trim().length === 0}>
               Check this badge in
             </button>
           </div>
-          <p className="note">Type the code or the six-character ID if the badge will not scan.</p>
+          <p className="note">Type the six-character ID printed under the code. Older placard codes like SEAMUN-2027-ECO-001 still work.</p>
           {notice ? (
             <p className="error" role="alert">
               {notice}

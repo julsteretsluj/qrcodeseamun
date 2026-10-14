@@ -1,7 +1,7 @@
 import QRCode from "qrcode";
 import type { RosterBadge } from "@/lib/types";
 
-export type BadgeFileSource = Pick<RosterBadge, "placard_code" | "committee" | "allocation">;
+export type BadgeFileSource = Pick<RosterBadge, "short_id" | "committee" | "allocation">;
 
 const QR_OPTIONS = {
   margin: 2,
@@ -19,15 +19,15 @@ function slug(value: string) {
 }
 
 export function badgeFileName(badge: BadgeFileSource) {
-  return `${slug(badge.committee)}_${slug(badge.allocation)}_${badge.placard_code}.png`;
+  return `${slug(badge.committee)}_${slug(badge.allocation)}_${badge.short_id}.png`;
 }
 
 export function zipFileName(label: string) {
   return `SEAMUN-2027_${slug(label)}_badge-codes.zip`;
 }
 
-export function badgeDataUrl(placardCode: string) {
-  return QRCode.toDataURL(placardCode, QR_OPTIONS);
+export function badgeDataUrl(allocationId: string) {
+  return QRCode.toDataURL(allocationId, QR_OPTIONS);
 }
 
 function dataUrlBytes(dataUrl: string) {
@@ -41,7 +41,7 @@ export async function buildBadgeZip(badges: BadgeFileSource[]) {
   const { zipSync } = await import("fflate");
   const files: Record<string, Uint8Array> = {};
   for (const badge of badges) {
-    files[badgeFileName(badge)] = dataUrlBytes(await badgeDataUrl(badge.placard_code));
+    files[badgeFileName(badge)] = dataUrlBytes(await badgeDataUrl(badge.short_id));
   }
   return zipSync(files, { level: 0 });
 }

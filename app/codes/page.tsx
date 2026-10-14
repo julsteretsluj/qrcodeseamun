@@ -37,6 +37,7 @@ export default async function CodesPage() {
 
   const { data, error } = await supabase.rpc("list_registration_badges");
   const people = (data ?? []) as RosterBadge[];
+  const ready = !error && people.length > 0 && people.every((person) => Boolean(person.short_id));
 
   return (
     <main className="page">
@@ -56,15 +57,15 @@ export default async function CodesPage() {
       <div className="board-head">
         <Wordmark
           title="Badge codes"
-          lede={`${people.length} codes, one for every delegate and chair allocation. Scanning a code at the desk checks that person in.`}
+          lede={`${people.length} codes, one for every delegate and chair allocation. Each code holds the allocation ID from the matrix, and scanning it at the desk checks that person in.`}
         />
-        {people.length > 0 ? (
+        {ready ? (
           <div className="head-actions">
             <ZipButton
               label="Download all as ZIP"
               zipLabel="All committees"
-              badges={people.map(({ placard_code, committee, allocation }) => ({
-                placard_code,
+              badges={people.map(({ short_id, committee, allocation }) => ({
+                short_id,
                 committee,
                 allocation,
               }))}
@@ -73,10 +74,15 @@ export default async function CodesPage() {
           </div>
         ) : null}
       </div>
-      {error || people.length === 0 ? (
-        <p className="note">Badge codes could not be loaded for this account.</p>
-      ) : (
+      {ready ? (
         <BadgeBoard people={people} />
+      ) : people.length > 0 ? (
+        <p className="note">
+          Allocation IDs are not available yet. The roster database needs its latest update before
+          codes can be printed.
+        </p>
+      ) : (
+        <p className="note">Badge codes could not be loaded for this account.</p>
       )}
     </main>
   );

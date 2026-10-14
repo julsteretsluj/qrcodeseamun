@@ -26,6 +26,7 @@ export type BadgeLookup = DeskCounts & {
 };
 
 export type RosterBadge = {
+  short_id: string;
   placard_code: string;
   role: "delegate" | "chair";
   full_name: string | null;
