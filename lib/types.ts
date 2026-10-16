@@ -32,3 +32,13 @@ export type RosterBadge = {
   allocation: string;
   sort_order: number;
 };
+
+export type RegistrationCheckin = {
+  short_id: string;
+  placard_code: string;
+  role: "delegate" | "chair";
+  full_name: string | null;
+  committee: string;
+  allocation: string;
+  registered_at: string;
+};

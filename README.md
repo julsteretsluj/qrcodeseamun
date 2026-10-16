@@ -41,4 +41,4 @@ Each code encodes only the six-character allocation ID from the matrix `ID` colu
 
 `registration_checkins` holds one row per placard code and the time it was first registered. Scanning the same badge again shows the original time. Seats with no one assigned are shown at the desk and are not checked in.
 
-To clear a check-in, delete its row from `registration_checkins` in the Supabase SQL editor.
+On `/codes`, Checked in lists everyone who has registered and lets Jules unregister a mistaken scan (with confirmation). The desk can then check that person in again. Only the secretariat account can call the unregister functions.

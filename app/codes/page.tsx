@@ -2,9 +2,10 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { Wordmark } from "@/components/wordmark";
 import { getSession } from "@/lib/session";
-import type { RosterBadge } from "@/lib/types";
+import type { RegistrationCheckin, RosterBadge } from "@/lib/types";
 import { signOut } from "../actions";
 import { BadgeBoard } from "./badge-board";
+import { CheckinsPanel } from "./checkins-panel";
 import { PrintCodes } from "./print-codes";
 import { ZipButton } from "./zip-button";
 
@@ -35,8 +36,12 @@ export default async function CodesPage() {
     );
   }
 
-  const { data, error } = await supabase.rpc("list_registration_badges");
+  const [{ data, error }, checkinsResult] = await Promise.all([
+    supabase.rpc("list_registration_badges"),
+    supabase.rpc("list_registration_checkins"),
+  ]);
   const people = (data ?? []) as RosterBadge[];
+  const checkins = (checkinsResult.data ?? []) as RegistrationCheckin[];
   const ready = !error && people.length > 0 && people.every((person) => Boolean(person.short_id));
 
   return (
@@ -74,6 +79,7 @@ export default async function CodesPage() {
           </div>
         ) : null}
       </div>
+      <CheckinsPanel initial={checkins} />
       {ready ? (
         <BadgeBoard people={people} />
       ) : people.length > 0 ? (

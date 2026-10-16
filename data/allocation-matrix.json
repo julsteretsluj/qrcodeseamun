@@ -1,0 +1,1982 @@
+[
+  {
+    "short_id": "6jb4nm",
+    "placard_code": "SEAMUN-2027-DAIS-01",
+    "role": "chair",
+    "full_name": null,
+    "committee": "ECOSOC",
+    "allocation": "Head Chair",
+    "sort_order": 1
+  },
+  {
+    "short_id": "158hlj",
+    "placard_code": "SEAMUN-2027-DAIS-02",
+    "role": "chair",
+    "full_name": null,
+    "committee": "ECOSOC",
+    "allocation": "Co-Chair",
+    "sort_order": 2
+  },
+  {
+    "short_id": "w26m7r",
+    "placard_code": "SEAMUN-2027-ECO-001",
+    "role": "delegate",
+    "full_name": "Xander Toaikoa",
+    "committee": "ECOSOC",
+    "allocation": "Australia",
+    "sort_order": 3
+  },
+  {
+    "short_id": "qpg96r",
+    "placard_code": "SEAMUN-2027-ECO-004",
+    "role": "delegate",
+    "full_name": "Sean Kapisi",
+    "committee": "ECOSOC",
+    "allocation": "Brazil",
+    "sort_order": 4
+  },
+  {
+    "short_id": "t5vj6y",
+    "placard_code": "SEAMUN-2027-ECO-005",
+    "role": "delegate",
+    "full_name": "Frederick Leniu",
+    "committee": "ECOSOC",
+    "allocation": "Canada",
+    "sort_order": 5
+  },
+  {
+    "short_id": "ep6lxu",
+    "placard_code": "SEAMUN-2027-ECO-006",
+    "role": "delegate",
+    "full_name": "Katy Anggara",
+    "committee": "ECOSOC",
+    "allocation": "China",
+    "sort_order": 6
+  },
+  {
+    "short_id": "rct96e",
+    "placard_code": "SEAMUN-2027-ECO-009",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "ECOSOC",
+    "allocation": "Ethiopia",
+    "sort_order": 7
+  },
+  {
+    "short_id": "w1j6q0",
+    "placard_code": "SEAMUN-2027-ECO-010",
+    "role": "delegate",
+    "full_name": "Cherily Chang",
+    "committee": "ECOSOC",
+    "allocation": "Finland",
+    "sort_order": 8
+  },
+  {
+    "short_id": "16z73b",
+    "placard_code": "SEAMUN-2027-ECO-011",
+    "role": "delegate",
+    "full_name": "Israel Tony",
+    "committee": "ECOSOC",
+    "allocation": "France",
+    "sort_order": 9
+  },
+  {
+    "short_id": "98pxk5",
+    "placard_code": "SEAMUN-2027-ECO-012",
+    "role": "delegate",
+    "full_name": "Tali Kepu",
+    "committee": "ECOSOC",
+    "allocation": "Germany",
+    "sort_order": 10
+  },
+  {
+    "short_id": "0nw8yk",
+    "placard_code": "SEAMUN-2027-ECO-013",
+    "role": "delegate",
+    "full_name": "Jireh Pita",
+    "committee": "ECOSOC",
+    "allocation": "India",
+    "sort_order": 11
+  },
+  {
+    "short_id": "m51v32",
+    "placard_code": "SEAMUN-2027-ECO-015",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "ECOSOC",
+    "allocation": "Israel",
+    "sort_order": 12
+  },
+  {
+    "short_id": "y3ocmi",
+    "placard_code": "SEAMUN-2027-ECO-016",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "ECOSOC",
+    "allocation": "Italy",
+    "sort_order": 13
+  },
+  {
+    "short_id": "9rhjzd",
+    "placard_code": "SEAMUN-2027-ECO-017",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "ECOSOC",
+    "allocation": "Japan",
+    "sort_order": 14
+  },
+  {
+    "short_id": "u84vxq",
+    "placard_code": "SEAMUN-2027-ECO-019",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "ECOSOC",
+    "allocation": "Nigeria",
+    "sort_order": 15
+  },
+  {
+    "short_id": "ydckl1",
+    "placard_code": "SEAMUN-2027-ECO-021",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "ECOSOC",
+    "allocation": "Russia",
+    "sort_order": 16
+  },
+  {
+    "short_id": "spymg2",
+    "placard_code": "SEAMUN-2027-ECO-022",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "ECOSOC",
+    "allocation": "Saudi Arabia",
+    "sort_order": 17
+  },
+  {
+    "short_id": "ezy45v",
+    "placard_code": "SEAMUN-2027-ECO-024",
+    "role": "delegate",
+    "full_name": "Mutiara Putri",
+    "committee": "ECOSOC",
+    "allocation": "South Africa",
+    "sort_order": 18
+  },
+  {
+    "short_id": "i5hdrk",
+    "placard_code": "SEAMUN-2027-ECO-025",
+    "role": "delegate",
+    "full_name": "Jaidyn Sekai",
+    "committee": "ECOSOC",
+    "allocation": "South Korea",
+    "sort_order": 19
+  },
+  {
+    "short_id": "03c91r",
+    "placard_code": "SEAMUN-2027-ECO-026",
+    "role": "delegate",
+    "full_name": "Christian McKenzie",
+    "committee": "ECOSOC",
+    "allocation": "Switzerland",
+    "sort_order": 20
+  },
+  {
+    "short_id": "dmbe2l",
+    "placard_code": "SEAMUN-2027-ECO-028",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "ECOSOC",
+    "allocation": "United Kingdom",
+    "sort_order": 21
+  },
+  {
+    "short_id": "4gsv82",
+    "placard_code": "SEAMUN-2027-ECO-029",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "ECOSOC",
+    "allocation": "United States",
+    "sort_order": 22
+  },
+  {
+    "short_id": "k2l4wj",
+    "placard_code": "SEAMUN-2027-DAIS-03",
+    "role": "chair",
+    "full_name": "Yidanni Xiong",
+    "committee": "Press Corps",
+    "allocation": "Editor",
+    "sort_order": 23
+  },
+  {
+    "short_id": "x1f70q",
+    "placard_code": "SEAMUN-2027-DAIS-04",
+    "role": "chair",
+    "full_name": "Karim Benmoussa",
+    "committee": "Press Corps",
+    "allocation": "Co-Editor",
+    "sort_order": 24
+  },
+  {
+    "short_id": "mkfl9u",
+    "placard_code": "SEAMUN-2027-PC-001",
+    "role": "delegate",
+    "full_name": "Rayyan Muhammad",
+    "committee": "Press Corps",
+    "allocation": "Al Jazeera",
+    "sort_order": 25
+  },
+  {
+    "short_id": "ut62xr",
+    "placard_code": "SEAMUN-2027-PC-003",
+    "role": "delegate",
+    "full_name": "E\u2019valanii Faalogo",
+    "committee": "Press Corps",
+    "allocation": "BBC News",
+    "sort_order": 26
+  },
+  {
+    "short_id": "bih7l9",
+    "placard_code": "SEAMUN-2027-PC-004",
+    "role": "delegate",
+    "full_name": "John Pulu",
+    "committee": "Press Corps",
+    "allocation": "CNN",
+    "sort_order": 27
+  },
+  {
+    "short_id": "wya4eu",
+    "placard_code": "SEAMUN-2027-PC-006",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "Press Corps",
+    "allocation": "Fox News",
+    "sort_order": 28
+  },
+  {
+    "short_id": "5lhze9",
+    "placard_code": "SEAMUN-2027-PC-008",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "Press Corps",
+    "allocation": "Reuters",
+    "sort_order": 29
+  },
+  {
+    "short_id": "y6ol09",
+    "placard_code": "SEAMUN-2027-PC-009",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "Press Corps",
+    "allocation": "Russia Today",
+    "sort_order": 30
+  },
+  {
+    "short_id": "4kp6zm",
+    "placard_code": "SEAMUN-2027-PC-010",
+    "role": "delegate",
+    "full_name": "Alin Somyanontanagul",
+    "committee": "Press Corps",
+    "allocation": "The Associated Press (AP)",
+    "sort_order": 31
+  },
+  {
+    "short_id": "2nzav8",
+    "placard_code": "SEAMUN-2027-PC-011",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "Press Corps",
+    "allocation": "The Guardian",
+    "sort_order": 32
+  },
+  {
+    "short_id": "fd7v8n",
+    "placard_code": "SEAMUN-2027-PC-012",
+    "role": "delegate",
+    "full_name": "Motu Vatikani",
+    "committee": "Press Corps",
+    "allocation": "The Lancet",
+    "sort_order": 33
+  },
+  {
+    "short_id": "9al4om",
+    "placard_code": "SEAMUN-2027-PC-013",
+    "role": "delegate",
+    "full_name": "Steve Robergs",
+    "committee": "Press Corps",
+    "allocation": "The New York Times",
+    "sort_order": 34
+  },
+  {
+    "short_id": "ix9lsh",
+    "placard_code": "SEAMUN-2027-PC-014",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "Press Corps",
+    "allocation": "The Onion",
+    "sort_order": 35
+  },
+  {
+    "short_id": "684y25",
+    "placard_code": "SEAMUN-2027-PC-015",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "Press Corps",
+    "allocation": "The Straits Times",
+    "sort_order": 36
+  },
+  {
+    "short_id": "beyt0z",
+    "placard_code": "SEAMUN-2027-PC-018",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "Press Corps",
+    "allocation": "Wall Street Journal",
+    "sort_order": 37
+  },
+  {
+    "short_id": "f7gm1a",
+    "placard_code": "SEAMUN-2027-PC-019",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "Press Corps",
+    "allocation": "Wikileak",
+    "sort_order": 38
+  },
+  {
+    "short_id": "moxsj4",
+    "placard_code": "SEAMUN-2027-PC-020",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "Press Corps",
+    "allocation": "Xinhua News Agency",
+    "sort_order": 39
+  },
+  {
+    "short_id": "t9v2m4",
+    "placard_code": "SEAMUN-2027-DAIS-05",
+    "role": "chair",
+    "full_name": "Jadon de Heer",
+    "committee": "UNHRC",
+    "allocation": "Head Chair",
+    "sort_order": 40
+  },
+  {
+    "short_id": "p5k8w1",
+    "placard_code": "SEAMUN-2027-DAIS-06",
+    "role": "chair",
+    "full_name": "Yuli Teresa Orellana",
+    "committee": "UNHRC",
+    "allocation": "Co-Chair",
+    "sort_order": 41
+  },
+  {
+    "short_id": "xk9b2v",
+    "placard_code": "SEAMUN-2027-HRC-001",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNHRC",
+    "allocation": "Argentina",
+    "sort_order": 42
+  },
+  {
+    "short_id": "f7zma4",
+    "placard_code": "SEAMUN-2027-HRC-002",
+    "role": "delegate",
+    "full_name": "Keithlyn Zheng",
+    "committee": "UNHRC",
+    "allocation": "Australia",
+    "sort_order": 43
+  },
+  {
+    "short_id": "qp5w8r",
+    "placard_code": "SEAMUN-2027-HRC-003",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNHRC",
+    "allocation": "Brazil",
+    "sort_order": 44
+  },
+  {
+    "short_id": "lt3g9x",
+    "placard_code": "SEAMUN-2027-HRC-004",
+    "role": "delegate",
+    "full_name": "Wayne Go",
+    "committee": "UNHRC",
+    "allocation": "Canada",
+    "sort_order": 45
+  },
+  {
+    "short_id": "vj2n7c",
+    "placard_code": "SEAMUN-2027-HRC-005",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNHRC",
+    "allocation": "Chile",
+    "sort_order": 46
+  },
+  {
+    "short_id": "wb8k4m",
+    "placard_code": "SEAMUN-2027-HRC-006",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNHRC",
+    "allocation": "China",
+    "sort_order": 47
+  },
+  {
+    "short_id": "hd5z1p",
+    "placard_code": "SEAMUN-2027-HRC-007",
+    "role": "delegate",
+    "full_name": "Joseph Malele",
+    "committee": "UNHRC",
+    "allocation": "Egypt",
+    "sort_order": 48
+  },
+  {
+    "short_id": "ry9t3f",
+    "placard_code": "SEAMUN-2027-HRC-008",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNHRC",
+    "allocation": "El Salvador",
+    "sort_order": 49
+  },
+  {
+    "short_id": "mx4v6b",
+    "placard_code": "SEAMUN-2027-HRC-009",
+    "role": "delegate",
+    "full_name": "Jia Vishnoi",
+    "committee": "UNHRC",
+    "allocation": "France",
+    "sort_order": 50
+  },
+  {
+    "short_id": "ks7w2g",
+    "placard_code": "SEAMUN-2027-HRC-010",
+    "role": "delegate",
+    "full_name": "Zara Musthafa",
+    "committee": "UNHRC",
+    "allocation": "Germany",
+    "sort_order": 51
+  },
+  {
+    "short_id": "cn3j8q",
+    "placard_code": "SEAMUN-2027-HRC-011",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNHRC",
+    "allocation": "India",
+    "sort_order": 52
+  },
+  {
+    "short_id": "pf9m1t",
+    "placard_code": "SEAMUN-2027-HRC-012",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNHRC",
+    "allocation": "Indonesia",
+    "sort_order": 53
+  },
+  {
+    "short_id": "bl4x7z",
+    "placard_code": "SEAMUN-2027-HRC-013",
+    "role": "delegate",
+    "full_name": "Peni Tupou",
+    "committee": "UNHRC",
+    "allocation": "Iran",
+    "sort_order": 54
+  },
+  {
+    "short_id": "gq2v5r",
+    "placard_code": "SEAMUN-2027-HRC-014",
+    "role": "delegate",
+    "full_name": "Aya Hanpanich",
+    "committee": "UNHRC",
+    "allocation": "Italy",
+    "sort_order": 55
+  },
+  {
+    "short_id": "tw8k3d",
+    "placard_code": "SEAMUN-2027-HRC-015",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNHRC",
+    "allocation": "Japan",
+    "sort_order": 56
+  },
+  {
+    "short_id": "nz6p1f",
+    "placard_code": "SEAMUN-2027-HRC-016",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNHRC",
+    "allocation": "Mexico",
+    "sort_order": 57
+  },
+  {
+    "short_id": "hv4m9x",
+    "placard_code": "SEAMUN-2027-HRC-017",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNHRC",
+    "allocation": "Nigeria",
+    "sort_order": 58
+  },
+  {
+    "short_id": "rc7j2b",
+    "placard_code": "SEAMUN-2027-HRC-018",
+    "role": "delegate",
+    "full_name": "Celtik Ta'ale",
+    "committee": "UNHRC",
+    "allocation": "Norway",
+    "sort_order": 59
+  },
+  {
+    "short_id": "ky5w8t",
+    "placard_code": "SEAMUN-2027-HRC-019",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNHRC",
+    "allocation": "Pakistan",
+    "sort_order": 60
+  },
+  {
+    "short_id": "gm3z6p",
+    "placard_code": "SEAMUN-2027-HRC-020",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNHRC",
+    "allocation": "Philippines",
+    "sort_order": 61
+  },
+  {
+    "short_id": "bx9v4q",
+    "placard_code": "SEAMUN-2027-HRC-021",
+    "role": "delegate",
+    "full_name": "Naki Sionetama",
+    "committee": "UNHRC",
+    "allocation": "Saudi Arabia",
+    "sort_order": 62
+  },
+  {
+    "short_id": "fl2t7d",
+    "placard_code": "SEAMUN-2027-HRC-022",
+    "role": "delegate",
+    "full_name": "Zeelin Manzano",
+    "committee": "UNHRC",
+    "allocation": "Singapore",
+    "sort_order": 63
+  },
+  {
+    "short_id": "wp8n3k",
+    "placard_code": "SEAMUN-2027-HRC-023",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNHRC",
+    "allocation": "South Africa",
+    "sort_order": 64
+  },
+  {
+    "short_id": "rt5m1z",
+    "placard_code": "SEAMUN-2027-HRC-024",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNHRC",
+    "allocation": "South Korea",
+    "sort_order": 65
+  },
+  {
+    "short_id": "jg9c4x",
+    "placard_code": "SEAMUN-2027-HRC-025",
+    "role": "delegate",
+    "full_name": "Mirelle Jacobs",
+    "committee": "UNHRC",
+    "allocation": "Switzerland",
+    "sort_order": 66
+  },
+  {
+    "short_id": "kv2w7b",
+    "placard_code": "SEAMUN-2027-HRC-026",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNHRC",
+    "allocation": "Thailand",
+    "sort_order": 67
+  },
+  {
+    "short_id": "pn4f8t",
+    "placard_code": "SEAMUN-2027-HRC-027",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNHRC",
+    "allocation": "Turkey",
+    "sort_order": 68
+  },
+  {
+    "short_id": "ch6m3q",
+    "placard_code": "SEAMUN-2027-HRC-028",
+    "role": "delegate",
+    "full_name": "Acare Leingboonchu",
+    "committee": "UNHRC",
+    "allocation": "United Kingdom",
+    "sort_order": 69
+  },
+  {
+    "short_id": "br9z1v",
+    "placard_code": "SEAMUN-2027-HRC-029",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNHRC",
+    "allocation": "United States",
+    "sort_order": 70
+  },
+  {
+    "short_id": "xl5k7d",
+    "placard_code": "SEAMUN-2027-HRC-030",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNHRC",
+    "allocation": "Vietnam",
+    "sort_order": 71
+  },
+  {
+    "short_id": "r4k8m2",
+    "placard_code": "SEAMUN-2027-DAIS-07",
+    "role": "chair",
+    "full_name": null,
+    "committee": "UNODC",
+    "allocation": "Head Chair",
+    "sort_order": 72
+  },
+  {
+    "short_id": "z7p3w9",
+    "placard_code": "SEAMUN-2027-DAIS-08",
+    "role": "chair",
+    "full_name": null,
+    "committee": "UNODC",
+    "allocation": "Co-Chair",
+    "sort_order": 73
+  },
+  {
+    "short_id": "x7m3k9",
+    "placard_code": "SEAMUN-2027-UNO-001",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNODC",
+    "allocation": "Afghanistan",
+    "sort_order": 74
+  },
+  {
+    "short_id": "b2v8p4",
+    "placard_code": "SEAMUN-2027-UNO-004",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNODC",
+    "allocation": "Brazil",
+    "sort_order": 75
+  },
+  {
+    "short_id": "q9n5t1",
+    "placard_code": "SEAMUN-2027-UNO-005",
+    "role": "delegate",
+    "full_name": "Kellen Kencana",
+    "committee": "UNODC",
+    "allocation": "Canada",
+    "sort_order": 76
+  },
+  {
+    "short_id": "w4k7z2",
+    "placard_code": "SEAMUN-2027-UNO-006",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNODC",
+    "allocation": "China",
+    "sort_order": 77
+  },
+  {
+    "short_id": "f8j2r6",
+    "placard_code": "SEAMUN-2027-UNO-007",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNODC",
+    "allocation": "Colombia",
+    "sort_order": 78
+  },
+  {
+    "short_id": "h3p9c5",
+    "placard_code": "SEAMUN-2027-UNO-011",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNODC",
+    "allocation": "India",
+    "sort_order": 79
+  },
+  {
+    "short_id": "v1g4x8",
+    "placard_code": "SEAMUN-2027-UNO-012",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNODC",
+    "allocation": "Indonesia",
+    "sort_order": 80
+  },
+  {
+    "short_id": "d7m2k4",
+    "placard_code": "SEAMUN-2027-UNO-013",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNODC",
+    "allocation": "Italy",
+    "sort_order": 81
+  },
+  {
+    "short_id": "t5b8w3",
+    "placard_code": "SEAMUN-2027-UNO-014",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNODC",
+    "allocation": "Japan",
+    "sort_order": 82
+  },
+  {
+    "short_id": "k8n4p1",
+    "placard_code": "SEAMUN-2027-UNO-016",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNODC",
+    "allocation": "Mexico",
+    "sort_order": 83
+  },
+  {
+    "short_id": "r2x7z9",
+    "placard_code": "SEAMUN-2027-UNO-017",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNODC",
+    "allocation": "Netherlands",
+    "sort_order": 84
+  },
+  {
+    "short_id": "c6v3j5",
+    "placard_code": "SEAMUN-2027-UNO-018",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNODC",
+    "allocation": "Nigeria",
+    "sort_order": 85
+  },
+  {
+    "short_id": "m9p2t7",
+    "placard_code": "SEAMUN-2027-UNO-019",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNODC",
+    "allocation": "Philippines",
+    "sort_order": 86
+  },
+  {
+    "short_id": "g4w8k2",
+    "placard_code": "SEAMUN-2027-UNO-020",
+    "role": "delegate",
+    "full_name": "King Yien Moo",
+    "committee": "UNODC",
+    "allocation": "Portugal",
+    "sort_order": 87
+  },
+  {
+    "short_id": "y5j1r3",
+    "placard_code": "SEAMUN-2027-UNO-021",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNODC",
+    "allocation": "Russia",
+    "sort_order": 88
+  },
+  {
+    "short_id": "p3n9x6",
+    "placard_code": "SEAMUN-2027-UNO-022",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNODC",
+    "allocation": "Singapore",
+    "sort_order": 89
+  },
+  {
+    "short_id": "z8k2v4",
+    "placard_code": "SEAMUN-2027-UNO-023",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNODC",
+    "allocation": "South Africa",
+    "sort_order": 90
+  },
+  {
+    "short_id": "a7t4m1",
+    "placard_code": "SEAMUN-2027-UNO-024",
+    "role": "delegate",
+    "full_name": "Raditya Hamdani",
+    "committee": "UNODC",
+    "allocation": "Switzerland",
+    "sort_order": 91
+  },
+  {
+    "short_id": "e2r9b5",
+    "placard_code": "SEAMUN-2027-UNO-025",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNODC",
+    "allocation": "Thailand",
+    "sort_order": 92
+  },
+  {
+    "short_id": "l6x3p8",
+    "placard_code": "SEAMUN-2027-UNO-028",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNODC",
+    "allocation": "United States",
+    "sort_order": 93
+  },
+  {
+    "short_id": "x8n2p5",
+    "placard_code": "SEAMUN-2027-DAIS-09",
+    "role": "chair",
+    "full_name": "Miki Roex",
+    "committee": "UNSC",
+    "allocation": "Head Chair",
+    "sort_order": 94
+  },
+  {
+    "short_id": "t6m9q1",
+    "placard_code": "SEAMUN-2027-DAIS-10",
+    "role": "chair",
+    "full_name": null,
+    "committee": "UNSC",
+    "allocation": "Co-Chair",
+    "sort_order": 95
+  },
+  {
+    "short_id": "qk3m8v",
+    "placard_code": "SEAMUN-2027-UNS-001",
+    "role": "delegate",
+    "full_name": "Tani Pavan",
+    "committee": "UNSC",
+    "allocation": "Bahrain",
+    "sort_order": 96
+  },
+  {
+    "short_id": "zd7x4b",
+    "placard_code": "SEAMUN-2027-UNS-002",
+    "role": "delegate",
+    "full_name": "Paul Taechaaukarakul",
+    "committee": "UNSC",
+    "allocation": "China",
+    "sort_order": 97
+  },
+  {
+    "short_id": "wp9k2t",
+    "placard_code": "SEAMUN-2027-UNS-003",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNSC",
+    "allocation": "Colombia",
+    "sort_order": 98
+  },
+  {
+    "short_id": "fn5j7c",
+    "placard_code": "SEAMUN-2027-UNS-004",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNSC",
+    "allocation": "Democratic Republic of the Congo",
+    "sort_order": 99
+  },
+  {
+    "short_id": "bl3v8z",
+    "placard_code": "SEAMUN-2027-UNS-005",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNSC",
+    "allocation": "Denmark",
+    "sort_order": 100
+  },
+  {
+    "short_id": "rc9w4p",
+    "placard_code": "SEAMUN-2027-UNS-006",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNSC",
+    "allocation": "France",
+    "sort_order": 101
+  },
+  {
+    "short_id": "hd2t7q",
+    "placard_code": "SEAMUN-2027-UNS-007",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNSC",
+    "allocation": "Greece",
+    "sort_order": 102
+  },
+  {
+    "short_id": "mp6x3b",
+    "placard_code": "SEAMUN-2027-UNS-008",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNSC",
+    "allocation": "Latvia",
+    "sort_order": 103
+  },
+  {
+    "short_id": "jx8k5t",
+    "placard_code": "SEAMUN-2027-UNS-009",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNSC",
+    "allocation": "Liberia",
+    "sort_order": 104
+  },
+  {
+    "short_id": "fl4z2m",
+    "placard_code": "SEAMUN-2027-UNS-010",
+    "role": "delegate",
+    "full_name": "Dhammathid Prakarnpilas",
+    "committee": "UNSC",
+    "allocation": "Pakistan",
+    "sort_order": 105
+  },
+  {
+    "short_id": "wt7b9q",
+    "placard_code": "SEAMUN-2027-UNS-011",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNSC",
+    "allocation": "Panama",
+    "sort_order": 106
+  },
+  {
+    "short_id": "rn3m6v",
+    "placard_code": "SEAMUN-2027-UNS-012",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNSC",
+    "allocation": "Russia",
+    "sort_order": 107
+  },
+  {
+    "short_id": "gq5j2z",
+    "placard_code": "SEAMUN-2027-UNS-013",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNSC",
+    "allocation": "Somalia",
+    "sort_order": 108
+  },
+  {
+    "short_id": "tb8x4p",
+    "placard_code": "SEAMUN-2027-UNS-014",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UNSC",
+    "allocation": "United Kingdom",
+    "sort_order": 109
+  },
+  {
+    "short_id": "pd2f7k",
+    "placard_code": "SEAMUN-2027-UNS-015",
+    "role": "delegate",
+    "full_name": "Lelava Sauioge",
+    "committee": "UNSC",
+    "allocation": "United States",
+    "sort_order": 110
+  },
+  {
+    "short_id": "c5v8j1",
+    "placard_code": "SEAMUN-2027-DAIS-11",
+    "role": "chair",
+    "full_name": "Jasmine Wang",
+    "committee": "UN Women",
+    "allocation": "Head Chair",
+    "sort_order": 111
+  },
+  {
+    "short_id": "m2q7k4",
+    "placard_code": "SEAMUN-2027-DAIS-12",
+    "role": "chair",
+    "full_name": "Viktoriya Kim",
+    "committee": "UN Women",
+    "allocation": "Co-Chair",
+    "sort_order": 112
+  },
+  {
+    "short_id": "kv3w7p",
+    "placard_code": "SEAMUN-2027-UNW-001",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UN Women",
+    "allocation": "Argentina",
+    "sort_order": 113
+  },
+  {
+    "short_id": "ch8m4z",
+    "placard_code": "SEAMUN-2027-UNW-002",
+    "role": "delegate",
+    "full_name": "Finau-Leka Lutui",
+    "committee": "UN Women",
+    "allocation": "Canada",
+    "sort_order": 114
+  },
+  {
+    "short_id": "vn2t9b",
+    "placard_code": "SEAMUN-2027-UNW-003",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UN Women",
+    "allocation": "China",
+    "sort_order": 115
+  },
+  {
+    "short_id": "jb6k5q",
+    "placard_code": "SEAMUN-2027-UNW-004",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UN Women",
+    "allocation": "Egypt",
+    "sort_order": 116
+  },
+  {
+    "short_id": "ml7v2x",
+    "placard_code": "SEAMUN-2027-UNW-005",
+    "role": "delegate",
+    "full_name": "Alisa Kumpeeraparb",
+    "committee": "UN Women",
+    "allocation": "France",
+    "sort_order": 117
+  },
+  {
+    "short_id": "xr4z9t",
+    "placard_code": "SEAMUN-2027-UNW-006",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UN Women",
+    "allocation": "Hungary",
+    "sort_order": 118
+  },
+  {
+    "short_id": "ft2k6c",
+    "placard_code": "SEAMUN-2027-UNW-007",
+    "role": "delegate",
+    "full_name": "Ron-Ron Ancero",
+    "committee": "UN Women",
+    "allocation": "Iceland",
+    "sort_order": 119
+  },
+  {
+    "short_id": "gw9n3p",
+    "placard_code": "SEAMUN-2027-UNW-008",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UN Women",
+    "allocation": "India",
+    "sort_order": 120
+  },
+  {
+    "short_id": "bp5m7b",
+    "placard_code": "SEAMUN-2027-UNW-009",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UN Women",
+    "allocation": "Iran",
+    "sort_order": 121
+  },
+  {
+    "short_id": "rj3x8z",
+    "placard_code": "SEAMUN-2027-UNW-010",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UN Women",
+    "allocation": "Japan",
+    "sort_order": 122
+  },
+  {
+    "short_id": "hk2t6q",
+    "placard_code": "SEAMUN-2027-UNW-011",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UN Women",
+    "allocation": "Kenya",
+    "sort_order": 123
+  },
+  {
+    "short_id": "wd7v4m",
+    "placard_code": "SEAMUN-2027-UNW-012",
+    "role": "delegate",
+    "full_name": "Ericka July Tapayan",
+    "committee": "UN Women",
+    "allocation": "Malta",
+    "sort_order": 124
+  },
+  {
+    "short_id": "nc3f8p",
+    "placard_code": "SEAMUN-2027-UNW-013",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UN Women",
+    "allocation": "Nigeria",
+    "sort_order": 125
+  },
+  {
+    "short_id": "pl9w2x",
+    "placard_code": "SEAMUN-2027-UNW-014",
+    "role": "delegate",
+    "full_name": "Jayson Tsai",
+    "committee": "UN Women",
+    "allocation": "Poland",
+    "sort_order": 126
+  },
+  {
+    "short_id": "zm4x6b",
+    "placard_code": "SEAMUN-2027-UNW-015",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UN Women",
+    "allocation": "Saudi Arabia",
+    "sort_order": 127
+  },
+  {
+    "short_id": "fk7t3z",
+    "placard_code": "SEAMUN-2027-UNW-016",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UN Women",
+    "allocation": "Singapore",
+    "sort_order": 128
+  },
+  {
+    "short_id": "gb2n9q",
+    "placard_code": "SEAMUN-2027-UNW-017",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UN Women",
+    "allocation": "South Korea",
+    "sort_order": 129
+  },
+  {
+    "short_id": "wl5m4v",
+    "placard_code": "SEAMUN-2027-UNW-018",
+    "role": "delegate",
+    "full_name": "Faith Joynt",
+    "committee": "UN Women",
+    "allocation": "Sweden",
+    "sort_order": 130
+  },
+  {
+    "short_id": "rp8x2t",
+    "placard_code": "SEAMUN-2027-UNW-019",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UN Women",
+    "allocation": "Thailand",
+    "sort_order": 131
+  },
+  {
+    "short_id": "jd3k7c",
+    "placard_code": "SEAMUN-2027-UNW-020",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "UN Women",
+    "allocation": "United States",
+    "sort_order": 132
+  },
+  {
+    "short_id": "d4v9x2",
+    "placard_code": "SEAMUN-2027-DAIS-13",
+    "role": "chair",
+    "full_name": "Noah Yii Rui Ming",
+    "committee": "DISEC",
+    "allocation": "Head Chair",
+    "sort_order": 133
+  },
+  {
+    "short_id": "h7b1k5",
+    "placard_code": "SEAMUN-2027-DAIS-14",
+    "role": "chair",
+    "full_name": "Metawee Phethin",
+    "committee": "DISEC",
+    "allocation": "Co-Chair",
+    "sort_order": 134
+  },
+  {
+    "short_id": "dz7m3k",
+    "placard_code": "SEAMUN-2027-DIS-001",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "DISEC",
+    "allocation": "Brazil",
+    "sort_order": 135
+  },
+  {
+    "short_id": "wb4v8q",
+    "placard_code": "SEAMUN-2027-DIS-002",
+    "role": "delegate",
+    "full_name": "Non Kulsiri",
+    "committee": "DISEC",
+    "allocation": "China",
+    "sort_order": 136
+  },
+  {
+    "short_id": "pf9x2z",
+    "placard_code": "SEAMUN-2027-DIS-003",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "DISEC",
+    "allocation": "Colombia",
+    "sort_order": 137
+  },
+  {
+    "short_id": "rt6k5b",
+    "placard_code": "SEAMUN-2027-DIS-004",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "DISEC",
+    "allocation": "France",
+    "sort_order": 138
+  },
+  {
+    "short_id": "hn2m7t",
+    "placard_code": "SEAMUN-2027-DIS-005",
+    "role": "delegate",
+    "full_name": "Mathias Sukardi",
+    "committee": "DISEC",
+    "allocation": "Germany",
+    "sort_order": 139
+  },
+  {
+    "short_id": "gq4j8c",
+    "placard_code": "SEAMUN-2027-DIS-006",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "DISEC",
+    "allocation": "India",
+    "sort_order": 140
+  },
+  {
+    "short_id": "ml3v9p",
+    "placard_code": "SEAMUN-2027-DIS-007",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "DISEC",
+    "allocation": "Israel",
+    "sort_order": 141
+  },
+  {
+    "short_id": "xk7w2d",
+    "placard_code": "SEAMUN-2027-DIS-008",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "DISEC",
+    "allocation": "Mexico",
+    "sort_order": 142
+  },
+  {
+    "short_id": "bt5f9z",
+    "placard_code": "SEAMUN-2027-DIS-009",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "DISEC",
+    "allocation": "Myanmar",
+    "sort_order": 143
+  },
+  {
+    "short_id": "jn4k6q",
+    "placard_code": "SEAMUN-2027-DIS-010",
+    "role": "delegate",
+    "full_name": "Deborah Adeoye",
+    "committee": "DISEC",
+    "allocation": "Nigeria",
+    "sort_order": 144
+  },
+  {
+    "short_id": "cr8t3b",
+    "placard_code": "SEAMUN-2027-DIS-011",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "DISEC",
+    "allocation": "Pakistan",
+    "sort_order": 145
+  },
+  {
+    "short_id": "wf2x7p",
+    "placard_code": "SEAMUN-2027-DIS-012",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "DISEC",
+    "allocation": "Russia",
+    "sort_order": 146
+  },
+  {
+    "short_id": "mv9z4k",
+    "placard_code": "SEAMUN-2027-DIS-013",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "DISEC",
+    "allocation": "Saudi Arabia",
+    "sort_order": 147
+  },
+  {
+    "short_id": "ld3f8t",
+    "placard_code": "SEAMUN-2027-DIS-014",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "DISEC",
+    "allocation": "Singapore",
+    "sort_order": 148
+  },
+  {
+    "short_id": "gp6w2c",
+    "placard_code": "SEAMUN-2027-DIS-015",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "DISEC",
+    "allocation": "South Africa",
+    "sort_order": 149
+  },
+  {
+    "short_id": "rk4m7q",
+    "placard_code": "SEAMUN-2027-DIS-016",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "DISEC",
+    "allocation": "Switzerland",
+    "sort_order": 150
+  },
+  {
+    "short_id": "ch9v3b",
+    "placard_code": "SEAMUN-2027-DIS-017",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "DISEC",
+    "allocation": "Thailand",
+    "sort_order": 151
+  },
+  {
+    "short_id": "tn5k8z",
+    "placard_code": "SEAMUN-2027-DIS-018",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "DISEC",
+    "allocation": "Turkey",
+    "sort_order": 152
+  },
+  {
+    "short_id": "jb4x2p",
+    "placard_code": "SEAMUN-2027-DIS-019",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "DISEC",
+    "allocation": "United Kingdom",
+    "sort_order": 153
+  },
+  {
+    "short_id": "xl7w9t",
+    "placard_code": "SEAMUN-2027-DIS-020",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "DISEC",
+    "allocation": "United States",
+    "sort_order": 154
+  },
+  {
+    "short_id": "p3k7m8",
+    "placard_code": "SEAMUN-2027-DAIS-15",
+    "role": "chair",
+    "full_name": "Veda Iyer",
+    "committee": "FWC - Stranger Things",
+    "allocation": "Head Chair",
+    "sort_order": 155
+  },
+  {
+    "short_id": "w2n5v9",
+    "placard_code": "SEAMUN-2027-DAIS-16",
+    "role": "chair",
+    "full_name": "Pera Swartz",
+    "committee": "FWC - Stranger Things",
+    "allocation": "Co-Chair",
+    "sort_order": 156
+  },
+  {
+    "short_id": "qx3v8b",
+    "placard_code": "SEAMUN-2027-FWC-001",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "FWC - Stranger Things",
+    "allocation": "Agent Connie Frazier",
+    "sort_order": 157
+  },
+  {
+    "short_id": "nk4w7p",
+    "placard_code": "SEAMUN-2027-FWC-002",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "FWC - Stranger Things",
+    "allocation": "Colonel KGB",
+    "sort_order": 158
+  },
+  {
+    "short_id": "rt2m9z",
+    "placard_code": "SEAMUN-2027-FWC-003",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "FWC - Stranger Things",
+    "allocation": "Dr. Martin Brenner",
+    "sort_order": 159
+  },
+  {
+    "short_id": "fj5k3x",
+    "placard_code": "SEAMUN-2027-FWC-004",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "FWC - Stranger Things",
+    "allocation": "Dr. Sam Owens",
+    "sort_order": 160
+  },
+  {
+    "short_id": "wb8p4v",
+    "placard_code": "SEAMUN-2027-FWC-005",
+    "role": "delegate",
+    "full_name": "Frankie Truong",
+    "committee": "FWC - Stranger Things",
+    "allocation": "Eleven (011/Jane Ives)",
+    "sort_order": 161
+  },
+  {
+    "short_id": "ch6n2t",
+    "placard_code": "SEAMUN-2027-FWC-006",
+    "role": "delegate",
+    "full_name": "Taye Kyd",
+    "committee": "FWC - Stranger Things",
+    "allocation": "Henry Creel (001/Vecna)",
+    "sort_order": 162
+  },
+  {
+    "short_id": "ml9v7k",
+    "placard_code": "SEAMUN-2027-FWC-007",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "FWC - Stranger Things",
+    "allocation": "Jim Hopper",
+    "sort_order": 163
+  },
+  {
+    "short_id": "pf3x8z",
+    "placard_code": "SEAMUN-2027-FWC-008",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "FWC - Stranger Things",
+    "allocation": "Joyce Byers",
+    "sort_order": 164
+  },
+  {
+    "short_id": "gq5j4w",
+    "placard_code": "SEAMUN-2027-FWC-009",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "FWC - Stranger Things",
+    "allocation": "Kali Prasad (008)",
+    "sort_order": 165
+  },
+  {
+    "short_id": "bt7m2p",
+    "placard_code": "SEAMUN-2027-FWC-010",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "FWC - Stranger Things",
+    "allocation": "Lt. Colonel Jack Sullivan",
+    "sort_order": 166
+  },
+  {
+    "short_id": "j8m3k2",
+    "placard_code": "SEAMUN-2027-DAIS-17",
+    "role": "chair",
+    "full_name": null,
+    "committee": "INTERPOL",
+    "allocation": "Head Chair",
+    "sort_order": 167
+  },
+  {
+    "short_id": "x5p9n4",
+    "placard_code": "SEAMUN-2027-DAIS-18",
+    "role": "chair",
+    "full_name": null,
+    "committee": "INTERPOL",
+    "allocation": "Co-Chair",
+    "sort_order": 168
+  },
+  {
+    "short_id": "k9m2v7",
+    "placard_code": "SEAMUN-2027-INT-002",
+    "role": "delegate",
+    "full_name": "Adel Koskinen",
+    "committee": "INTERPOL",
+    "allocation": "Brazil",
+    "sort_order": 169
+  },
+  {
+    "short_id": "b7t3n5",
+    "placard_code": "SEAMUN-2027-INT-004",
+    "role": "delegate",
+    "full_name": "Fazil Dar",
+    "committee": "INTERPOL",
+    "allocation": "China",
+    "sort_order": 170
+  },
+  {
+    "short_id": "z2r9q4",
+    "placard_code": "SEAMUN-2027-INT-005",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "INTERPOL",
+    "allocation": "Colombia",
+    "sort_order": 171
+  },
+  {
+    "short_id": "f8v1k3",
+    "placard_code": "SEAMUN-2027-INT-006",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "INTERPOL",
+    "allocation": "France",
+    "sort_order": 172
+  },
+  {
+    "short_id": "h3m7x9",
+    "placard_code": "SEAMUN-2027-INT-007",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "INTERPOL",
+    "allocation": "Germany",
+    "sort_order": 173
+  },
+  {
+    "short_id": "c6p4w2",
+    "placard_code": "SEAMUN-2027-INT-008",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "INTERPOL",
+    "allocation": "India",
+    "sort_order": 174
+  },
+  {
+    "short_id": "w1t8p5",
+    "placard_code": "SEAMUN-2027-INT-010",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "INTERPOL",
+    "allocation": "Italy",
+    "sort_order": 175
+  },
+  {
+    "short_id": "k5r2z7",
+    "placard_code": "SEAMUN-2027-INT-012",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "INTERPOL",
+    "allocation": "Laos",
+    "sort_order": 176
+  },
+  {
+    "short_id": "g9v4n1",
+    "placard_code": "SEAMUN-2027-INT-013",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "INTERPOL",
+    "allocation": "Mexico",
+    "sort_order": 177
+  },
+  {
+    "short_id": "x2p7m8",
+    "placard_code": "SEAMUN-2027-INT-014",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "INTERPOL",
+    "allocation": "Myanmar",
+    "sort_order": 178
+  },
+  {
+    "short_id": "d4t9k2",
+    "placard_code": "SEAMUN-2027-INT-015",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "INTERPOL",
+    "allocation": "Netherlands",
+    "sort_order": 179
+  },
+  {
+    "short_id": "p8n1v5",
+    "placard_code": "SEAMUN-2027-INT-016",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "INTERPOL",
+    "allocation": "Philippines",
+    "sort_order": 180
+  },
+  {
+    "short_id": "y3m6w9",
+    "placard_code": "SEAMUN-2027-INT-017",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "INTERPOL",
+    "allocation": "Russia",
+    "sort_order": 181
+  },
+  {
+    "short_id": "j7r1q4",
+    "placard_code": "SEAMUN-2027-INT-018",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "INTERPOL",
+    "allocation": "South Africa",
+    "sort_order": 182
+  },
+  {
+    "short_id": "t5k8x2",
+    "placard_code": "SEAMUN-2027-INT-019",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "INTERPOL",
+    "allocation": "Spain",
+    "sort_order": 183
+  },
+  {
+    "short_id": "n2v9p6",
+    "placard_code": "SEAMUN-2027-INT-020",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "INTERPOL",
+    "allocation": "Thailand",
+    "sort_order": 184
+  },
+  {
+    "short_id": "v4z7r1",
+    "placard_code": "SEAMUN-2027-INT-021",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "INTERPOL",
+    "allocation": "Turkey",
+    "sort_order": 185
+  },
+  {
+    "short_id": "q8w3t5",
+    "placard_code": "SEAMUN-2027-INT-023",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "INTERPOL",
+    "allocation": "United Kingdom",
+    "sort_order": 186
+  },
+  {
+    "short_id": "a9m4k2",
+    "placard_code": "SEAMUN-2027-INT-024",
+    "role": "delegate",
+    "full_name": "Jaya Frazer",
+    "committee": "INTERPOL",
+    "allocation": "United States",
+    "sort_order": 187
+  },
+  {
+    "short_id": "w7v3p8",
+    "placard_code": "SEAMUN-2027-INT-025",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "INTERPOL",
+    "allocation": "Vietnam",
+    "sort_order": 188
+  },
+  {
+    "short_id": "g6k2p9",
+    "placard_code": "SEAMUN-2027-DAIS-19",
+    "role": "chair",
+    "full_name": "Eric Wang",
+    "committee": "WHO",
+    "allocation": "Head Chair",
+    "sort_order": 189
+  },
+  {
+    "short_id": "t4v8m1",
+    "placard_code": "SEAMUN-2027-DAIS-20",
+    "role": "chair",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "Co-Chair",
+    "sort_order": 190
+  },
+  {
+    "short_id": "vk4m7b",
+    "placard_code": "SEAMUN-2027-WHO-001",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "Argentina",
+    "sort_order": 191
+  },
+  {
+    "short_id": "zw9x2d",
+    "placard_code": "SEAMUN-2027-WHO-002",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "Australia",
+    "sort_order": 192
+  },
+  {
+    "short_id": "pf5k8t",
+    "placard_code": "SEAMUN-2027-WHO-003",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "Brazil",
+    "sort_order": 193
+  },
+  {
+    "short_id": "gn3j7q",
+    "placard_code": "SEAMUN-2027-WHO-004",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "Canada",
+    "sort_order": 194
+  },
+  {
+    "short_id": "bl8v4m",
+    "placard_code": "SEAMUN-2027-WHO-005",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "China",
+    "sort_order": 195
+  },
+  {
+    "short_id": "rc2x6z",
+    "placard_code": "SEAMUN-2027-WHO-006",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "Egypt",
+    "sort_order": 196
+  },
+  {
+    "short_id": "hd9t3f",
+    "placard_code": "SEAMUN-2027-WHO-007",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "Ethiopia",
+    "sort_order": 197
+  },
+  {
+    "short_id": "mp7w2g",
+    "placard_code": "SEAMUN-2027-WHO-008",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "France",
+    "sort_order": 198
+  },
+  {
+    "short_id": "jx4k8c",
+    "placard_code": "SEAMUN-2027-WHO-009",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "Germany",
+    "sort_order": 199
+  },
+  {
+    "short_id": "fl3z7p",
+    "placard_code": "SEAMUN-2027-WHO-010",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "India",
+    "sort_order": 200
+  },
+  {
+    "short_id": "wt9b4v",
+    "placard_code": "SEAMUN-2027-WHO-011",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "Indonesia",
+    "sort_order": 201
+  },
+  {
+    "short_id": "rn5m2k",
+    "placard_code": "SEAMUN-2027-WHO-012",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "Israel",
+    "sort_order": 202
+  },
+  {
+    "short_id": "gq8j4q",
+    "placard_code": "SEAMUN-2027-WHO-013",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "Italy",
+    "sort_order": 203
+  },
+  {
+    "short_id": "tb3x7z",
+    "placard_code": "SEAMUN-2027-WHO-014",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "Jamaica",
+    "sort_order": 204
+  },
+  {
+    "short_id": "pd9f2t",
+    "placard_code": "SEAMUN-2027-WHO-015",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "Japan",
+    "sort_order": 205
+  },
+  {
+    "short_id": "kv6w3b",
+    "placard_code": "SEAMUN-2027-WHO-016",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "Mexico",
+    "sort_order": 206
+  },
+  {
+    "short_id": "ch7m4p",
+    "placard_code": "SEAMUN-2027-WHO-017",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "Netherlands",
+    "sort_order": 207
+  },
+  {
+    "short_id": "vn2t8x",
+    "placard_code": "SEAMUN-2027-WHO-018",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "Nigeria",
+    "sort_order": 208
+  },
+  {
+    "short_id": "jb9k3q",
+    "placard_code": "SEAMUN-2027-WHO-019",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "Norway",
+    "sort_order": 209
+  },
+  {
+    "short_id": "ml5v7b",
+    "placard_code": "SEAMUN-2027-WHO-020",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "Russia",
+    "sort_order": 210
+  },
+  {
+    "short_id": "xr3z6p",
+    "placard_code": "SEAMUN-2027-WHO-021",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "Saudi Arabia",
+    "sort_order": 211
+  },
+  {
+    "short_id": "ft9k2d",
+    "placard_code": "SEAMUN-2027-WHO-022",
+    "role": "delegate",
+    "full_name": "Anya Firmansyah",
+    "committee": "WHO",
+    "allocation": "Singapore",
+    "sort_order": 212
+  },
+  {
+    "short_id": "gw4n8c",
+    "placard_code": "SEAMUN-2027-WHO-023",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "South Africa",
+    "sort_order": 213
+  },
+  {
+    "short_id": "bp7m3z",
+    "placard_code": "SEAMUN-2027-WHO-024",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "South Korea",
+    "sort_order": 214
+  },
+  {
+    "short_id": "rj2x5q",
+    "placard_code": "SEAMUN-2027-WHO-025",
+    "role": "delegate",
+    "full_name": "Rodri Pidada",
+    "committee": "WHO",
+    "allocation": "Switzerland",
+    "sort_order": 215
+  },
+  {
+    "short_id": "hk8t4f",
+    "placard_code": "SEAMUN-2027-WHO-026",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "Thailand",
+    "sort_order": 216
+  },
+  {
+    "short_id": "wd3v7b",
+    "placard_code": "SEAMUN-2027-WHO-027",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "Turkey",
+    "sort_order": 217
+  },
+  {
+    "short_id": "nc9f2t",
+    "placard_code": "SEAMUN-2027-WHO-028",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "United Kingdom",
+    "sort_order": 218
+  },
+  {
+    "short_id": "pl5w8k",
+    "placard_code": "SEAMUN-2027-WHO-029",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "United States",
+    "sort_order": 219
+  },
+  {
+    "short_id": "zm3x7q",
+    "placard_code": "SEAMUN-2027-WHO-030",
+    "role": "delegate",
+    "full_name": null,
+    "committee": "WHO",
+    "allocation": "Vietnam",
+    "sort_order": 220
+  }
+]
