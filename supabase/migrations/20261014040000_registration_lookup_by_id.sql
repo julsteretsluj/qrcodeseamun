@@ -1,4 +1,4 @@
--- Badges now carry the allocation ID from the matrix (for example k2l4wj).
+-- Badges now carry the allocation ID from the matrix (for example abc123).
 -- Placard codes are still accepted at the desk for badges printed earlier.
 
 create unique index if not exists registration_people_short_id_ci_key

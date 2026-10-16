@@ -375,7 +375,7 @@ export function RegistrationDesk() {
             autoComplete="off"
             autoCorrect="off"
             spellCheck={false}
-            placeholder="k2l4wj"
+            placeholder="abc123"
           />
           <div className="actions">
             <button className="button" type="submit" disabled={busy || code.trim().length === 0}>
