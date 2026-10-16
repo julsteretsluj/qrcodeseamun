@@ -273,10 +273,21 @@ export function RegistrationDesk() {
         <section>
           {result ? (
             <article className={`result ${result.status}`} aria-live="polite">
-              <p className={`role ${result.role ?? "delegate"}`}>
-                {result.role === "chair" ? "Chair" : "Delegate"}
-              </p>
-              <h2>{result.name ?? "Unassigned"}</h2>
+              <div className="result-tags">
+                <p className={`role ${result.role ?? "delegate"}`}>
+                  {result.role === "chair" ? "Chair" : "Delegate"}
+                </p>
+                {result.status === "unassigned" ? (
+                  <p className="seat-tag open">Open seat</p>
+                ) : null}
+                {result.status === "registered" ? (
+                  <p className="seat-tag checked-in">Checked in</p>
+                ) : null}
+                {result.status === "already_registered" ? (
+                  <p className="seat-tag already">Already registered</p>
+                ) : null}
+              </div>
+              <h2>{result.status === "unassigned" ? "Open seat" : (result.name ?? "Named seat")}</h2>
               <p className="status">{statusLine}</p>
               <dl className="facts">
                 <div>
@@ -399,7 +410,7 @@ export function RegistrationDesk() {
 
 function describeResult(result: BadgeLookup) {
   if (result.status === "unassigned") {
-    return "No one is assigned to this seat yet, so it was not registered.";
+    return "This allocation is still open. No one was checked in.";
   }
   if (result.status === "already_registered" && result.registered_at) {
     const time = new Intl.DateTimeFormat(undefined, {

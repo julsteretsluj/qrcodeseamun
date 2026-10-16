@@ -340,15 +340,64 @@ a.button {
   border-radius: 20px;
   box-shadow: var(--shadow);
   padding: 26px 24px 22px;
-  border-top: 4px solid var(--tertiary);
+  border: 1px solid rgba(60, 60, 67, 0.12);
+  border-top-width: 4px;
+  border-top-color: var(--tertiary);
+  transition: background-color 220ms var(--ease), border-color 220ms var(--ease);
 }
 
 .result.registered {
+  background: #f2fff5;
+  border-color: rgba(52, 199, 89, 0.28);
   border-top-color: #34c759;
 }
 
 .result.already_registered {
+  background: #f2f7ff;
+  border-color: rgba(0, 122, 255, 0.22);
   border-top-color: var(--accent);
+}
+
+.result.unassigned {
+  background: #fffaf2;
+  border-color: rgba(255, 149, 0, 0.28);
+  border-top-color: #ff9500;
+}
+
+.result-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.result-tags .role,
+.result-tags .seat-tag {
+  margin: 0;
+}
+
+.seat-tag {
+  display: inline-flex;
+  padding: 4px 10px;
+  border-radius: 980px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.seat-tag.open {
+  background: rgba(255, 149, 0, 0.14);
+  color: #c93400;
+}
+
+.seat-tag.checked-in {
+  background: rgba(52, 199, 89, 0.14);
+  color: #1f8f3c;
+}
+
+.seat-tag.already {
+  background: rgba(0, 122, 255, 0.12);
+  color: var(--accent);
 }
 
 .role {
@@ -370,11 +419,31 @@ a.button {
   color: #5856d6;
 }
 
+.result.unassigned .role {
+  background: rgba(255, 149, 0, 0.12);
+  color: #c93400;
+}
+
 .result h2 {
   margin: 0;
   font-size: 32px;
   letter-spacing: -0.03em;
   line-height: 1.1;
+}
+
+.result.registered .status {
+  color: #1f8f3c;
+  font-weight: 600;
+}
+
+.result.already_registered .status {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.result.unassigned .status {
+  color: #c93400;
+  font-weight: 600;
 }
 
 .status {
