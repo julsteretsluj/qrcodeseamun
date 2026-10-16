@@ -31,7 +31,16 @@ export type RosterBadge = {
   committee: string;
   allocation: string;
   sort_order: number;
+  registered_at: string | null;
 };
+
+export type BadgeTileState = "open" | "assigned" | "registered";
+
+export function badgeTileState(badge: Pick<RosterBadge, "full_name" | "registered_at">): BadgeTileState {
+  if (!badge.full_name) return "open";
+  if (badge.registered_at) return "registered";
+  return "assigned";
+}
 
 export type RegistrationCheckin = {
   short_id: string;

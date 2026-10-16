@@ -613,6 +613,21 @@ a.button {
   box-shadow: var(--shadow);
   padding: 12px 12px 14px;
   break-inside: avoid;
+  border: 1px solid rgba(60, 60, 67, 0.12);
+}
+
+.tile-open {
+  background: #fffaf2;
+  border-color: rgba(255, 149, 0, 0.28);
+}
+
+.tile-assigned {
+  background: var(--surface);
+}
+
+.tile-registered {
+  background: #f2fff5;
+  border-color: rgba(52, 199, 89, 0.28);
 }
 
 .tile img {
@@ -623,8 +638,32 @@ a.button {
   background: #fff;
 }
 
-.tile .badge-id {
+.tile-status {
   margin: 10px 0 0;
+  display: inline-flex;
+  padding: 3px 8px;
+  border-radius: 980px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.tile-status.open {
+  background: rgba(255, 149, 0, 0.14);
+  color: #c93400;
+}
+
+.tile-status.assigned {
+  background: rgba(60, 60, 67, 0.08);
+  color: var(--secondary);
+}
+
+.tile-status.registered {
+  background: rgba(52, 199, 89, 0.14);
+  color: #1f8f3c;
+}
+
+.tile .badge-id {
+  margin: 8px 0 0;
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
   font-size: 22px;
   font-weight: 600;
@@ -645,6 +684,14 @@ a.button {
   margin: 2px 0 0;
   color: var(--secondary);
   font-size: 13px;
+}
+
+.tile-open .who {
+  color: #c93400;
+}
+
+.tile-registered .who {
+  color: #1f8f3c;
 }
 
 .tile .code {
@@ -722,7 +769,21 @@ a:focus-visible {
 
   .tile {
     box-shadow: none;
-    border: 1px solid #d1d1d6;
+  }
+
+  .tile-open {
+    border-color: #ff9500;
+    background: #fffaf2;
+  }
+
+  .tile-assigned {
+    border-color: #d1d1d6;
+    background: #fff;
+  }
+
+  .tile-registered {
+    border-color: #34c759;
+    background: #f2fff5;
   }
 }
 

@@ -1,6 +1,12 @@
 import { badgeDataUrl, badgeFileName } from "@/lib/badge-files";
-import type { RosterBadge } from "@/lib/types";
+import { badgeTileState, type RosterBadge } from "@/lib/types";
 import { ZipButton } from "./zip-button";
+
+function tileLabel(state: ReturnType<typeof badgeTileState>) {
+  if (state === "open") return "Open seat";
+  if (state === "registered") return "Registered";
+  return "Assigned";
+}
 
 export async function BadgeBoard({ people }: { people: RosterBadge[] }) {
   const tiles = await Promise.all(
@@ -40,19 +46,23 @@ export async function BadgeBoard({ people }: { people: RosterBadge[] }) {
             />
           </div>
           <div className="tiles">
-            {group.items.map(({ person, src }) => (
-              <article className="tile" key={person.placard_code}>
-                <img src={src} alt={`QR code for allocation ID ${person.short_id}`} />
-                <p className="badge-id">{person.short_id}</p>
-                <p className="allocation">{person.allocation}</p>
-                <p className="who">{person.full_name ?? "Open seat"}</p>
-                <p className="seat">{person.role === "chair" ? "Chair" : "Delegate"}</p>
-                <p className="code">{person.placard_code}</p>
-                <a download={badgeFileName(person)} href={src}>
-                  Download PNG
-                </a>
-              </article>
-            ))}
+            {group.items.map(({ person, src }) => {
+              const state = badgeTileState(person);
+              return (
+                <article className={`tile tile-${state}`} key={person.placard_code}>
+                  <img src={src} alt={`QR code for allocation ID ${person.short_id}`} />
+                  <p className={`tile-status ${state}`}>{tileLabel(state)}</p>
+                  <p className="badge-id">{person.short_id}</p>
+                  <p className="allocation">{person.allocation}</p>
+                  <p className="who">{person.full_name ?? "No one assigned"}</p>
+                  <p className="seat">{person.role === "chair" ? "Chair" : "Delegate"}</p>
+                  <p className="code">{person.placard_code}</p>
+                  <a download={badgeFileName(person)} href={src}>
+                    Download PNG
+                  </a>
+                </article>
+              );
+            })}
           </div>
         </section>
       ))}
