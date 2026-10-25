@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Sync registration_people from SEAMUN allocation matrix (19).xlsx via Management API.
+"""Sync registration_people from SEAMUN allocation matrix (20).xlsx via Management API.
 
-Seat grid + IDs come from Allocation Matrix (19). Optionally overlay empty names from
-Delegate & Chair Allocation Matrix (4) when that file has a real name for the same
-committee + allocation (never invent people; prefer fuller matrix-19 names).
+Seat grid + IDs come from Allocation Matrix (20). Optionally overlay empty names from
+Delegate & Chair Allocation Matrix (5) when that file has a real name for the same
+committee + allocation (never invent people; prefer fuller matrix-20 names).
 """
 
 from __future__ import annotations
@@ -19,10 +19,10 @@ from pathlib import Path
 import openpyxl
 
 MATRIX = Path(
-    "/Users/juleskitto-astrop/Downloads/SEAMUN I 2027 _ Allocation Matrix (19).xlsx"
+    "/Users/juleskitto-astrop/Downloads/SEAMUN I 2027 _ Allocation Matrix (20).xlsx"
 )
 DELEGATE_NAMES = Path(
-    "/Users/juleskitto-astrop/Downloads/Delegate & Chair Allocation Matrix _ SEAMUN I 2027 (4).xlsx"
+    "/Users/juleskitto-astrop/Downloads/Delegate & Chair Allocation Matrix _ SEAMUN I 2027 (5).xlsx"
 )
 REF = "dgswuhyggkqmipkrzhdb"
 PLACEHOLDER_NAMES = {
